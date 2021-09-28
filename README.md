@@ -1,3 +1,6 @@
+Fork of Derek Taylor (DistroTube)'s colorscripts on [Gitlab](https://gitlab.com/dwt1/dmscripts/-/tree/master/)
+
+---
 # Dmenu Scripts (dmscripts)
 
 The scripts included in this repo are:
