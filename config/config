@@ -108,6 +108,7 @@ confedit_list[xmonad]="$HOME/.xmonad/README.org"
 confedit_list[xinitrc]="$HOME/.xinitrc"
 confedit_list[xresources]="$HOME/.Xresources"
 confedit_list[zsh]="$HOME/.zshrc"
+confedit_list[todo]="$HOME/TODO_List/README.md"
 
 # dm-reddit config
 declare -a reddit_list=(
@@ -137,6 +138,7 @@ websearch[brave]="https://search.brave.com/search?q="
 websearch[duckduckgo]="https://duckduckgo.com/?q="
 websearch[gemini search \(https\)]="https://portal.mozz.us/gemini/geminispace.info/search%3F"
 websearch[google]="https://www.google.com/search?q="
+websearch[baidu]="https://www.baidu.com/s?wd="
 websearch[qwant]="https://www.qwant.com/?q="
 websearch[swisscows]="https://swisscows.com/web?query="
 websearch[yandex]="https://yandex.com/search/?text="
@@ -215,7 +217,8 @@ lingva_instance="https://lingva.ml"
 
 # dm-weather config
 declare -A weather_location
-# weather_location[New York]="New+York"
+weather_location[New York]="New+York"
+weather_location[Chengdu]="Chengdu"
 # weather_opts="m" # Always use metric units (celsius)
 # weather_opts="u" # Always use US units (fahrenheit)
 # see: https://github.com/chubin/wttr.in
