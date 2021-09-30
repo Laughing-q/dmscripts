@@ -57,7 +57,7 @@ bookman_show_source=1
 sounds_dir="${HOME}/.config/dmscripts/dmsounds"
 
 # dm-setbg
-setbg_dir="${HOME}/Pictures/Wallpapers"
+setbg_dir="${HOME}/Pictures/DT"
 
 # dm-maim
 maim_dir="${HOME}/Screenshots"

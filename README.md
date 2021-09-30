@@ -1,5 +1,13 @@
 Fork of Derek Taylor (DistroTube)'s colorscripts on [Gitlab](https://gitlab.com/dwt1/dmscripts/-/tree/master/)
 
+# The scripts I'm using
+- [X] dm-confedit
+- [X] dm-websearch
+- [X] dm-kill
+- [X] dm-setbg
+  - sxiv
+  - xwallpaper
+
 ---
 # Dmenu Scripts (dmscripts)
 
