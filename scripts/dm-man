@@ -28,31 +28,41 @@ source "$(get_config)"
 
 function main() {
   # An array of options to choose.
-  local _options=( "Search manpages" "Random manpage" "Quit")
+  # local _options=( "Search manpages" "Random manpage" "Quit")
   # Piping the above array into dmenu.
   # We use "printf '%s\n'" to format the array one item to a line.
-  choice=$(printf '%s\n' "${_options[@]}" | ${DMENU} 'Manpages:' "$@")
+  # choice=$(printf '%s\n' "${_options[@]}" | ${DMENU} 'Manpages:' "$@")
+
+  # man -k . | awk '{$3="-"; print $0}' | \
+  # ${DMENU} 'Search for man:' | \
+  # awk '{print $2, $1}' | tr -d '()' | xargs $DMTERM man 
+  local _temp_file="/tmp/man.temp"
+  # _temp_file=$(mktemp /tmp/man.XXXXXX)
+  man -k . | awk '{$3="-"; print $0}' | \
+  ${DMENU} 'Search for man:' | \
+  awk '{print $2, $1}' | tr -d '()' | xargs man > $_temp_file &&
+  $DMEDITOR $_temp_file
 
   # What to do when/if we choose one of the options.
-  case "$choice" in
-    'Search manpages')
-          # shellcheck disable=SC2086
-          man -k . | awk '{$3="-"; print $0}' | \
-          ${DMENU} 'Search for:' | \
-          awk '{print $2, $1}' | tr -d '()' | xargs $DMTERM man
-    ;;
-    'Random manpage')
-          # shellcheck disable=SC2086
-          man -k . | cut -d' ' -f1 | shuf -n 1 | \
-          ${DMENU} 'Random manpage:' | xargs $DMTERM man
-    ;;
-    'Quit')
-      echo "Program terminated." && exit 0
-    ;;
-    *)
-      exit 0
-    ;;
-  esac
+  # case "$choice" in
+  #   'Search manpages')
+  #         # shellcheck disable=SC2086
+  #         man -k . | awk '{$3="-"; print $0}' | \
+  #         ${DMENU} 'Search for:' | \
+  #         awk '{print $2, $1}' | tr -d '()' | xargs $DMTERM man
+  #   ;;
+  #   'Random manpage')
+  #         # shellcheck disable=SC2086
+  #         man -k . | cut -d' ' -f1 | shuf -n 1 | \
+  #         ${DMENU} 'Random manpage:' | xargs $DMTERM man
+  #   ;;
+  #   'Quit')
+  #     echo "Program terminated." && exit 0
+  #   ;;
+  #   *)
+  #     exit 0
+  #   ;;
+  # esac
 
 }
 
