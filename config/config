@@ -11,7 +11,7 @@
 
 DMENU="dmenu -i -l 20 -p"
 
-DMBROWSER="google-chrome-stable"
+DMBROWSER="google-chrome-stable --new-window"
 # DMBROWSER="qutebrowser"
 
 DMTERM="st -e"
